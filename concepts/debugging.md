@@ -1,20 +1,20 @@
 Idiosyncracies, Gotchas, and Debugging Tips
 ===========================================
-# Versions
+## Versions
 apis, clis
 
-# Quotas
+## Quotas
 https://azure.microsoft.com/en-us/documentation/articles/azure-subscription-service-limits/
 
-# CLI
+## CLI
 -v switch
 --json switch
 
-# Local Logs
+## Local Logs
 ~/.azure/
 
-# ARM Activity Logs
+## ARM Activity Logs
 azure group log show ExampleGroup
 
-# Resource Explorer
+## Resource Explorer
 https://resources.azure.com

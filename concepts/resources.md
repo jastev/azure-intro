@@ -1,13 +1,16 @@
 Resources, Resource Providers, and Resource Groups
 ==================================================
-# Resources
+
+## Resources
+
 An Azure resource is a discrete element of functionality that can usually
 be independently provisioned, managed, and released; it generates costs
 according to a specific metric, according to use, independently of other
 resources.  In short, whatever you're building in Azure, resources are
 what you're building it with, and determine how much you'll pay for it.
 
-# Resource Providers
+## Resource Providers
+
 The entire lifecycle of a resource, and all interactions with it,
 is governed by its resource provider (RP) and resource type.  A single 
 RP can expose multiple resource types, but a given resource can only be
@@ -42,6 +45,7 @@ azure provider list
 azure provider show Microsoft.Compute
 ```
 
-# Resource Groups
+## Resource Groups
+
 Resources are often so fine-grained that their value comes from 
 being combined with other resources.

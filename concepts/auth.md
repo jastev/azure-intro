@@ -19,6 +19,7 @@ legitimate authentication request from the CLI.  You are then redirected to
 a login page.
 
 ## Tenants
+
 On this page, your login (e.g. username@domain) is parsed into a username
 and domain.  The domain is then used to lookup the appropriate Azure Active
 Directory (AAD) *tenant*.  An AAD tenant is similar in some ways, but very
@@ -38,6 +39,7 @@ will not be able to login to AzureChinaCloud, for example, using credentials
 from a tenant in AzureCloud.
 
 ## Authentication
+
 There are other ways to authenticate.  For example, using the --tenant, 
 -u, and -p switches, you can specify a different AAD tenant, username, and
 password.  Alternately, you can use the --certificate-file to login using

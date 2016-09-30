@@ -36,9 +36,8 @@ before proceeding.  We assume you have already been set up with an account
 by your organization, as well.
 
 # Table of Contents
-===================
 ## Concepts
-* [Environments](concepts/environments.md
+* [Environments](concepts/environments.md)
 * [Authentication & Authorization](concepts/auth.md)
 * [Subscriptions](concepts/subscriptions.md)
 * [Regions](concepts/regions.md)
