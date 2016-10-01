@@ -3,7 +3,7 @@ Resources, Resource Providers, and Resource Groups
 
 ## Resources
 
-An Azure resource is a discrete element of functionality that can usually
+An Azure resource is a discrete element of functionality that can 
 be independently provisioned, managed, and released; it generates costs
 according to a specific metric, according to use, independently of other
 resources.  In short, whatever you're building in Azure, resources are
@@ -94,7 +94,7 @@ be created in a given location:
 
 $ azure group create -n intro-rg -l westus
 info:    Created resource group intro-rg
-data:    Id:                  /subscriptions/<subscription-id>/resourceGroups/intro-rg
+data:    Id:                  /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg
 data:    Name:                intro-rg
 data:    Location:            westus
 data:    Provisioning State:  Succeeded
@@ -127,7 +127,7 @@ $ azure group show intro-rg
 info:    Executing command group show
 + Listing resource groups                                                      
 + Listing resources for the group                                              
-data:    Id:                  /subscriptions/<subscription-id>/resourceGroups/intro-rg
+data:    Id:                  /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg
 data:    Name:                intro-rg
 data:    Location:            westus
 data:    Provisioning State:  Succeeded

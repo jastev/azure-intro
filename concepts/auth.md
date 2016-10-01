@@ -9,10 +9,9 @@ authenticate.  With the xplat CLI, that looks like this:
 
 $ azure login
 info:    Executing command login
-info:    To sign in, use a web browser to open the page https://aka.ms/devicelogin. Enter the code <REDACTED> to authenticate.
-info:    Added subscription <REDACTED>
-info:    Added subscription <REDACTED>
-info:    Added subscription <REDACTED>
+info:    To sign in, use a web browser to open the page https://aka.ms/devicelogin. Enter the code XXXXXXXX to authenticate.
+info:    Added subscription Microsoft Azure Internal Consumption
+info:    Added subscription Microsoft Azure Internal Consumption
 info:    login command OK
 ```
 
@@ -38,9 +37,9 @@ attached to every AAD tenant.  You can find it via
 $ azure account show
 info:    Executing command account show
 data:    Name                        : Microsoft Azure Internal Consumption
-data:    ID                          : <REDACTED>
+data:    ID                          : <subscription-id>
 data:    State                       : Enabled
-data:    Tenant ID                   : <REDACTED>
+data:    Tenant ID                   : <tenant-id>
 data:    Is Default                  : true
 data:    Environment                 : AzureCloud
 data:    Has Certificate             : No

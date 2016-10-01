@@ -50,6 +50,7 @@ by your organization, as well.
 
 ## Network
 * [Virtual Networks & Subnets](network/vnets.md)
+* [Gateways](network/gateways.md)
 * [IP Addresses & NICs](network/ips_nics.md)
 * [Network Security Groups](network/nsgs.md)
 * [Load Balancers](network/lbs.md)

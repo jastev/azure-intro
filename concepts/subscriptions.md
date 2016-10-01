@@ -17,7 +17,13 @@ You can see all of the subscriptions to which your currently-authenticated
 account has access as follows:
 
 ```bash
-azure account list
+$ azure account list
+info:    Executing command account list
+data:    Name                                  Id                                    Current  State  
+data:    ------------------------------------  ------------------------------------  -------  -------
+data:    Microsoft Azure Internal Consumption  11111111-1111-1111-1111-111111111111  true     Enabled
+data:    Microsoft Azure Internal Consumption  22222222-2222-2222-2222-222222222222  false    Enabled
+info:    account list command OK
 ```
 
 Note that because subscriptions are tied to single AAD tenants, which are
@@ -28,5 +34,11 @@ When you login, your cli session will be associatiated automatically with
 your default subscription.  To change the default, use:
 
 ```bash
-azure account set <subscription-id>
+# azure account set <subscription-id>
+
+$ azure account set 22222222-2222-2222-2222-222222222222
+info:    Executing command account set
+info:    Setting subscription to "Microsoft Azure Internal Consumption" with id "22222222-2222-2222-2222-222222222222".
+info:    Changes saved
+info:    account set command OK
 ```

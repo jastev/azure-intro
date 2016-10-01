@@ -9,7 +9,8 @@ RFC1918 spaces (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16).  For this reason
 addresses on these networks are refererred to as _private_ IP addresses.  When
 a private IP address is required, almost any address that is within the
 network/subnet space may be be specified.  (Azure reserves the first and last,
-plus three more.)
+plus three more.  Virtual networks do not support multicast or broadcast
+addressing.)
 
 It is possible, of course, to obtain a publicly routable IP address.  These
 addresses are not part of a virtual network, even if the public IP address
@@ -21,15 +22,33 @@ Unlike private IPs, public IPs are represented as resources that you must
 allocate and manage.
 
 ```bash
-azure network public-ip create -g <resource-group> -n <name> -l <region>
+# azure network public-ip create <resource-group-name> <public-ip-name> <region-name>
+# azure network public-ip create -g <resource-group> -n <name> -l <region>
+
+$ azure network public-ip create -g intro-rg -n intro-pip -l westus
+info:    Executing command network public-ip create
+warn:    Using default --idle-timeout 4
+warn:    Using default --allocation-method Dynamic
+warn:    Using default --ip-version IPv4
++ Looking up the public ip "intro-pip"                                         
++ Creating public ip address "intro-pip"                                       
+data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/publicIPAddresses/intro-pip
+data:    Name                            : intro-pip
+data:    Type                            : Microsoft.Network/publicIPAddresses
+data:    Location                        : westus
+data:    Provisioning state              : Succeeded
+data:    Allocation method               : Dynamic
+data:    IP version                      : IPv4
+data:    Idle timeout in minutes         : 4
+info:    network public-ip create command OK
 ```
 
 ```bash
-azure network public-ip list -g <resource-group>
+azure network public-ip list -g <resource-group-name>
 ```
 
 ```bash
-azure network public-ip show -g <resource-group> -n <name>
+azure network public-ip show -g <resource-group-name> -n <public-ip-name>
 ```
 
 ## Dynamic vs. Static IPs
