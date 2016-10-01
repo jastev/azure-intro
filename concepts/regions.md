@@ -1,8 +1,7 @@
 Regions
 =======
 Azure datacenters are distributed around the world in what are called
-"regions" (though the parameter name in the xplat cli is sometimes
-misleadingly labelled "location").  Even when there are two datacenters
+"regions" Even when there are two datacenters
 in the same proximal geographic area (e.g. East US and East US 2, both
 in Virginia), they are considered separate regions.
 
@@ -15,11 +14,19 @@ might incorporate a third-party resource provider not generally available
 publically.  For all or any of these reasons, resource providers vary from 
 region to region.
 
+The Azure xplat CLI uses the label "location" instead of "region".
 You can find all of the regions/locations for the currently active
 subscription with:
 
 ```bash
-azure location list
+$ azure location list
+info:    Getting locations...
+data:    
+...
+data:    Location    :  westus
+data:    DisplayName :  West US
+data:    Providers   :  Microsoft.Batch, Microsoft.Compute, Microsoft.DocumentDB, Microsoft.Logic...
+...
 ```
 
 Note that regional names are formed by concatenating the country name, 

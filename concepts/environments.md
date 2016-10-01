@@ -33,17 +33,20 @@ data:    AzureGermanCloud
 info:    account env list command OK
 ```
 
-By default, users log into AzureCloud, but you can select to login to an
-alternate environment with the -e switch, for example:
-
-```bash
-azure login -e AzureChinaCloud
-```
-
 You can obtain the technical details for a given environment, for example
-whether or not it is public, its portal URL, and its REST endpoints, as
-follows:
+whether or not it is public, and its REST endpoints, as follows:
 
 ```bash
-azure account env show
+# azure account env show <environment-name>
+# azure account env show --environment <environment-name>
+
+$ azure account env show AzureCloud
+info:    Executing command account env show
+data:    Name:                                              AzureCloud
+...
+data:    isPublicEnvironment:                               true
+...
+data:    managementEndpointUrl:                             https://management.
+                                                            core.windows.net
+...
 ```

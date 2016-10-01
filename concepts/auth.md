@@ -4,6 +4,9 @@ In order to interact with Azure, through whatever interface, you must first
 authenticate.  With the xplat CLI, that looks like this:
 
 ```bash
+# AzureCloud is the default, but you can login to another environment with -e
+# azure login -e <environment-name>
+
 $ azure login
 info:    Executing command login
 info:    To sign in, use a web browser to open the page https://aka.ms/devicelogin. Enter the code <REDACTED> to authenticate.
@@ -30,8 +33,22 @@ authorization information for an organization.
 There are occasions (such as creating a Service Principal, see below)
 when you will need to know your TenantId, a unique internal designator 
 attached to every AAD tenant.  You can find it via
+
 ```bash
-azure account show
+$ azure account show
+info:    Executing command account show
+data:    Name                        : Microsoft Azure Internal Consumption
+data:    ID                          : <REDACTED>
+data:    State                       : Enabled
+data:    Tenant ID                   : <REDACTED>
+data:    Is Default                  : true
+data:    Environment                 : AzureCloud
+data:    Has Certificate             : No
+data:    Has Access Token            : Yes
+data:    User name                   : jastev@microsoft.com
+data:    
+info:    account show command OK
+
 ```
 
 Note that AAD tenants are specific to an [environment](environments.md).  You
