@@ -4,7 +4,8 @@ A subscription is the root node of a resource tree.  It is also the single
 point of billing information for usage associated with all resources in the
 tree.  Each subscription is associated with only one [AAD tenant]
 (auth.md) (which represents the owning organization), but an organization
-may have any number of subscriptions.
+may have any number of subscriptions.  More on the relationship between
+AAD and subscriptions is available [here](https://azure.microsoft.com/en-us/documentation/articles/active-directory-how-subscriptions-associated-directory/).
 
 Because subscriptions form the root of resource trees, they are the highest
 level at which authorization can be granted to users.  It is not uncommon

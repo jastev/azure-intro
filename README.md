@@ -36,6 +36,7 @@ before proceeding.  We assume you have already been set up with an account
 by your organization, as well.
 
 # Table of Contents
+
 ## Concepts
 * [Environments](concepts/environments.md)
 * [Authentication & Authorization](concepts/auth.md)
@@ -44,8 +45,14 @@ by your organization, as well.
 * [Resources, Resource Providers, and Resource Groups](concepts/resources.md)
 * [Idiosyncracies, Gotchas, and Debugging Tips](concepts/debugging.md)
 
-## Network
+## Infrastructure as a Service
+* [The Iaas "Big Three": Network, Storage, and Compute](iaas.md)
 
+## Network
+* [Virtual Networks & Subnets](network/vnets.md)
+* [IP Addresses & NICs](network/ips_nics.md)
+* [Network Security Groups](network/nsgs.md)
+* [Load Balancers](network/lbs.md)
 
 ## Storage
 

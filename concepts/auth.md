@@ -53,3 +53,10 @@ but can't grant rights to others) and Reader (read-only access).  As we
 shall see later, resources are structured in a hierarchy, and authorization
 can be granted at any level of the resource tree.  Unless specifically
 overridden at a lower level, authorization is inherited from higher levels.
+
+## Service Principals
+
+Users are not the only objects managed by AAD.  An application can be
+registered in AAD, and then a *service principal* can be set up to act
+on that application's behalf.  Service principals are authenticated and
+are granted authorizations within AAD exactly as are users.

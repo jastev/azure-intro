@@ -9,6 +9,9 @@ according to a specific metric, according to use, independently of other
 resources.  In short, whatever you're building in Azure, resources are
 what you're building it with, and determine how much you'll pay for it.
 
+Every resource in Azure is provisioned as part of a [subscription]
+(subscriptions.md) within a given [region](regions.md).
+
 ## Resource Providers
 
 The entire lifecycle of a resource, and all interactions with it,
@@ -41,11 +44,43 @@ Microsoft.Storage, and Microsoft.Compute
 azure provider list
 ```
 
+For a specific provider, you can get the list of the resource types that 
+it supports, and the regions where each is available.
+
 ```bash
-azure provider show Microsoft.Compute
+azure provider show <provider-name>
 ```
 
 ## Resource Groups
 
 Resources are often so fine-grained that their value comes from 
-being combined with other resources.
+being combined with other resources, and it is helpful to organize them
+accordingly.  Because these resources are conceptually
+part of a single solution, they typically have the same lifecycle as well.
+For these reasons, Azure allows bundling arbitrary resources into a
+resource group.
+
+A resource group is itself a resource, and like all resources, it has to
+be created in a given location:
+
+```bash
+azure group create <name> <location>
+```
+
+However, the resource group can contain resources that are **not** in the
+same region.
+
+You can see all of the resource groups for the current subscription with
+
+```bash
+azure group list
+```
+
+and all of the resources within a group in the current subscription with
+
+```bash
+azure group show <name>
+```
+
+Both commands also take the "--subscription <subscription-id>" switch
+to specify an alternate subscription.
