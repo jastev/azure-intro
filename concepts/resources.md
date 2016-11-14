@@ -89,8 +89,8 @@ A resource group is itself a resource, and like all resources, it has to
 be created in a given location:
 
 ```bash
-# azure group create <group> <location>
-# azure group create -n <group> -l <location> --subscription <subscription-id>
+# azure group create <group-name> <location>
+# azure group create -n <group-name> -l <location>
 
 $ azure group create -n intro-rg -l westus
 info:    Created resource group intro-rg
@@ -104,7 +104,7 @@ info:    group create command OK
 ```
 
 However, the resource group can contain resources that are **not** in the
-same region.
+same region as the group itself.
 
 You can see all of the resource groups for the current subscription with
 
@@ -150,6 +150,14 @@ info:    Executing command resource list
 + Listing resources                                                            
 info:    No matched resources were found.
 info:    resource list command OK
+```
+
+Finally, when you're done with all of the resources in a group, you can
+delete them together by deleting the group that contains them.
+
+```bash
+# azure group delete <group-name>
+# azure group delete -n <group-name>
 ```
 
 These commands also take the "--subscription <subscription-id>" switch

@@ -73,6 +73,7 @@ overridden at a lower level, authorization is inherited from higher levels.
 ## Service Principals
 
 Users are not the only objects managed by AAD.  An application can be
-registered in AAD, and then a *service principal* can be set up to act
-on that application's behalf.  Service principals are authenticated and
-are granted authorizations within AAD exactly as are users.
+registered in AAD, and then a [service principal]
+(https://azure.microsoft.com/en-us/documentation/articles/resource-group-authenticate-service-principal-cli/)
+can be set up to act on that application's behalf.  Service principals are
+authenticated and are granted authorizations within AAD exactly as are users.

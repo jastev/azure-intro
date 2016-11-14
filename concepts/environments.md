@@ -17,7 +17,9 @@ from REST endpoints for [resource providers](resources.md) to
 clouds is referred to generically as an "environment".
 
 Note that because each environment is under local control, not all resource
-providers may be available, API versions may vary, etc.
+providers may be available, API versions may vary, the
+[Marketplace](https://azure.microsoft.com/en-us/marketplace/) may contain
+different offerings, etc.
 
 The list of environments can be seen like this:
 
