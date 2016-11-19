@@ -4,14 +4,13 @@ An Azure [virtual network](https://azure.microsoft.com/en-us/documentation/artic
 (or "vnet") is a resource that provides a logical IP communication space for
 other resources.  It comprises one or more IPv4 address spaces.
 
-At creation, vnets are independent of each other and the public Internet - you
+By default, vnets are independent of each other and the public Internet - you
 can have the same or overlapping address space in two different vnets, or in 
 a vnet and the public Internet.  Even if the address space in a vnet is 
-nominally in routable IP space, it will not be routable from the public 
-Internet.  All of this is due to the fact that these address spaces are
-isolated from everything outside the vnet through NAT.
+nominally in routable IP space, by default it will not be reachable from the 
+public Internet.
 
-If vnets are connected to each other, or to on-premises networks, however,
+If vnets are interconnected, or to on-premises networks, however,
 the address spaces cannot intersect each other, because of routing constraints.
 
 Note that like any other resource, vnets must be created in a region,
@@ -67,7 +66,9 @@ info:    network vnet show command OK
 ## Subnets
 
 Virtual networks are themselved composed of subnets, which each have a single
-address space that must be within that defined by its parent vnet.
+address space expressable in CIDR notation that must be within that defined
+by its parent vnet.  Network resources always exist within a subnet, rather
+than the parent vnet itself.
 
 ```bash
 # azure network vnet subnet create <resource-group-name> <vnet-name> <subnet-name>

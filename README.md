@@ -70,6 +70,7 @@ all work.
 * [IP Addresses & NICs](network/ips_nics.md)
 * [Network Security Groups](network/nsgs.md)
 * [Load Balancers](network/lbs.md)
+* [DNS](network/dns.md)
 
 ## Storage
 * [Blobs, Tables, Queues, and Files](storage/types.md)
