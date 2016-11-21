@@ -12,8 +12,9 @@ all regions in the [Azure Public Cloud](environments.md) simultaneously.
 Similarly, [sovereign clouds](environments.md) might choose to delay adoption
 of an update, or an [enterprise cloud](environments.md)
 might incorporate a third-party [resource provider](resources.md) not generally 
-available publicly.  For all or any of these reasons, [Azure services]
-(https://azure.microsoft.com/en-us/regions/services/) vary across regions.
+available publicly.  For all or any of these reasons, the [availability of
+Azure resources] (https://azure.microsoft.com/en-us/regions/services/)
+varies across regions.
 
 The Azure xplat CLI uses the label "location" instead of "region".
 You can find all of the regions/locations for the currently active

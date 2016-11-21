@@ -3,7 +3,7 @@ Resources, Resource Providers, and Resource Groups
 
 ## Resources
 
-An Azure resource is a discrete element of functionality that can 
+An [Azure resource](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) is a discrete element of functionality that can 
 be independently provisioned, managed, and released; it generates costs
 according to a specific metric, according to use, independently of other
 resources.  In short, whatever you're building in Azure, resources are
@@ -20,7 +20,7 @@ RP can expose multiple resource types, but a given resource can only be
 of a single type.  The provider and type exclusively determine the
 legal means and meaning for interactions with the resource.
 
-RPs are implemented as REST APIs.  When a request to provision a new
+RPs are implemented as [REST APIs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api).  When a request to provision a new
 resource is received, the RP returns the resource's unique id on success.
 Subsequent manipulation of the resource goes through the RP's REST API,
 with the id as a parameter.  Additional information associated with the
