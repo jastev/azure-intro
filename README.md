@@ -73,9 +73,11 @@ all work.
 * [DNS](network/dns.md)
 
 ## Storage
-* [Blobs, Tables, Queues, and Files](storage/types.md)
-* [Premiere, Hot, and Cold](storage/bloblevels.md)
+* [Types](storage/types.md)
+* [Accounts](storage/accounts.md)
+* [Accessibility](storage/accessibility.md)
 * [VHDs](storage/vhds.md)
+* [Temporary/Local](storage/local.md)
 
 ## Compute
 
