@@ -34,6 +34,11 @@ accounts are not truly "general purpose" - they *only support Azure VHDs
 use a premium image - only DS, DSv2, GS, or Fs.  Premium accounts also only
 support LRS, and do not support [public accessibility](accessibility.md).
 
+Unlike standard accounts, which vary in size by the data they contain, 
+premium accounts come in only three preallocated sizes: P10 (128GiB), 
+P20 (512GiB), and P30 (1024GiB).  Each also comes with fully committed
+performance specs, graduated with those levels.
+
 ## Blob Accounts
 
 Instead of a general purpose account, you can choose to create
@@ -64,3 +69,13 @@ and digits, and be between 3 and 24 characters long.  One good way to help
 satisfy this is to use a datestring of the form YYYYMMDD within the name.
 Second, note that unlike many CLI commands, the -n switch to specify the name
 of the account is not supported. 
+
+Premium accounts are created using the 'PLRS' sku:
+
+```bash
+$ azure storage account create -g intro-rg --kind Storage --sku-name PLRS -l westus intro20161122strgprm
+info:    Executing command storage account create
++ Checking availability of the storage account name                            
++ Creating storage account                                                     
+info:    storage account create command OK
+```
