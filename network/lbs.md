@@ -73,7 +73,61 @@ data:    Provisioning state              : Succeeded
 info:    network lb address-pool create command OK
 ```
 
-And finally, let's review the load balancer as we've set it up so far:
+And add the two NICs we created earlier to it.
+
+```bash
+$ azure network nic ip-config set -g intro-rg -c intro-nic-be1 -n default-ip-config -d /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/loadbalancers/intro-lb/backendAddressPools/intro-lb-back
+info:    Executing command network nic ip-config set
++ Looking up the network interface "intro-nic-be1"                             
++ Updating network interface "intro-nic-be1"                                   
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkInterfaces/intro-nic-be1
+data:    Name                            : intro-nic-be1
+data:    Type                            : Microsoft.Network/networkInterfaces
+data:    Location                        : westus
+data:    Provisioning state              : Succeeded
+data:    MAC address                     : 00-0D-3A-35-0F-E1
+data:    Internal domain name suffix     : heksuhpgkrnefhty1fwul5dpla.dx.internal.cloudapp.net
+data:    Enable IP forwarding            : false
+data:    Virtual machine                 : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Compute/virtualMachines/intro-vm-be1
+data:    IP configurations:
+data:      Name                          : default-ip-config
+data:      Primary                       : true
+data:      Provisioning state            : Succeeded
+data:      Private IP address            : 10.1.0.4
+data:      Private IP version            : IPv4
+data:      Private IP allocation method  : Dynamic
+data:      Subnet                        : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-1
+data:      Load balancer backend address pools:
+data:        Id                          : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/loadBalancers/intro-lb/backendAddressPools/intro-lb-back
+data:     
+info:    network nic ip-config set command OK
+MacBook-Pro:storage jastev$ azure network nic ip-config set -g intro-rg -c intro-nic-be2 -n default-ip-config -d /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/loadbalancers/intro-lb/backendAddressPools/intro-lb-back
+info:    Executing command network nic ip-config set
++ Looking up the network interface "intro-nic-be2"                             
++ Updating network interface "intro-nic-be2"                                   
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkInterfaces/intro-nic-be2
+data:    Name                            : intro-nic-be2
+data:    Type                            : Microsoft.Network/networkInterfaces
+data:    Location                        : westus
+data:    Provisioning state              : Succeeded
+data:    MAC address                     : 00-0D-3A-33-B4-77
+data:    Internal domain name suffix     : heksuhpgkrnefhty1fwul5dpla.dx.internal.cloudapp.net
+data:    Enable IP forwarding            : false
+data:    IP configurations:
+data:      Name                          : default-ip-config
+data:      Primary                       : true
+data:      Provisioning state            : Succeeded
+data:      Private IP address            : 10.1.0.5
+data:      Private IP version            : IPv4
+data:      Private IP allocation method  : Dynamic
+data:      Subnet                        : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-1
+data:      Load balancer backend address pools:
+data:        Id                          : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/loadBalancers/intro-lb/backendAddressPools/intro-lb-back
+data:     
+info:    network nic ip-config set command OK
+```
+
+Finally, let's review the load balancer as we've set it up so far:
 
 ```bash
 $ azure network lb show -g intro-rg -n intro-lb

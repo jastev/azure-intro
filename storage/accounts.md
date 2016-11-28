@@ -14,12 +14,12 @@ By default, a storage account is general purpose and can be used to store
 any of the four kinds of data.  This kind of storage account has two
 performance tiers, standard and premium.
 
-Standard accounts are backed by mechanical disks, and support fewer "I/O
+Standard accounts are backed by mechanical disks, and support fewer (20k) "I/O
 Operations Per Second" ([IOPS](https://docs.microsoft.com/en-us/azure/storage/storage-scalability-targets)).  The specs for standard accounts are not
 guaranteed; as they are approached the storage service will begin returning
 HTTP status codes of 503 (Server Busy) or 500 (Operation Timeout).
 
-At creation time, you can choose the kind of data redundancy you need for
+At creation time, you can choose the kind of data replication you need for
 the standard account: locally redundant storage (LRS) makes multiple copies
 within the same data center; zone redundant storage (ZRS) makes copies in
 two paired datacenters that are usually geographically "close"; globally

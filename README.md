@@ -53,6 +53,7 @@ all work.
 # Table of Contents
 
 ## Concepts
+* [xPlat CLI](concepts/cli.md)
 * [Environments](concepts/environments.md)
 * [Authentication & Authorization](concepts/auth.md)
 * [Subscriptions](concepts/subscriptions.md)
@@ -67,7 +68,8 @@ all work.
 ## Network
 * [Virtual Networks & Subnets](network/vnets.md)
 * [Gateways](network/gateways.md)
-* [IP Addresses & NICs](network/ips_nics.md)
+* [IP Addresses](network/ips.md)
+* [NICs](network/nics.md)
 * [Network Security Groups](network/nsgs.md)
 * [Load Balancers](network/lbs.md)
 * [DNS](network/dns.md)
@@ -80,5 +82,7 @@ all work.
 * [Temporary/Local](storage/local.md)
 
 ## Compute
+* [Availability Sets](compute/availsets.md)
+* [Virtual Machines](compute/vms.md)
 
-
+## Wrap-up
