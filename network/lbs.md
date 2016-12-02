@@ -137,8 +137,8 @@ data:    Backend address pool id         : /subscriptions/25b347b0-e6dd-45c1-bb1
 info:    network lb rule create command OK
 ```
  
-And we add a health probe that will ensure that VMs not responding to HTTP
-requests are removed from the pool:
+And we add a [health probe](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview) that will ensure that VMs not responding
+to HTTP requests are removed from the pool:
 
 ```bash
 $ azure network lb probe create -g intro-rg -l intro-lb -n intro-lb-probe-http -p tcp -o 80 -f /

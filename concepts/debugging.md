@@ -21,7 +21,7 @@ There are several general switches to the Azure CLI which can be helpful:
 
 * _-h_ gives context-sensitive help, including many rarely-used but helpful
 options
-* _-v_ generates verbose output
+* _-v_ generates verbose output (also try -vv for even more verbosity)
 * _--json_ returns the results of the action as json, which often contains
 information which would not be included in the more conventional response
 text
@@ -32,7 +32,10 @@ including most notably azure.details.log and azure.err, with additional
 information on successful and failed requests, respectively.
 
 ## ARM Activity Logs
-azure group log show -n <resource-group-name> will give the history of the
+```bash
+azure group log show -n <resource-group>
+```
+ will give the history of the
 ARM operations on a given resource group.  There are various other additional
 options for this command that give more or less detail.
 

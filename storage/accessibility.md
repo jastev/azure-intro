@@ -32,6 +32,12 @@ data:    key2  Ecj0Kvh1e2JIvvkalJD1sKlwOIQAObA0kNa0xL6MIZzeaFIiLp0c0di1sNCcqYS4U
 info:    storage account keys renew command OK
 ```
 
+Instead of specifiying the storage account details on the command line, they
+can also be put into environment variables.  This is convenient if you'll be
+using the same storage account repeatedly.  You can either use the pair
+AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY or you can use
+AZURE_STORAGE_CONNECTION_STRING.
+
 Instead of keys, access can also be managed using [shared access signatures]
 (https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1).
 These are more fine-grained, and provide access to one or more service
@@ -44,4 +50,10 @@ level:
 # azure storage container set -c <connection-string> -p Container|Blob <container-name>
 ```
 
-At present, however, containers in premium storage accounts do not support public accessibility.  
+The "Container" setting allows access to the container metadata, including the
+list of blobs contained within.  To allow access to a blob only if the URL is
+known, use "Blob".
+
+At present, however, blob containers in premium storage accounts do not support
+public accessibility.  
+

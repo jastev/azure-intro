@@ -10,4 +10,10 @@ Azure IaaS implements these three general services as [Resource Providers]
 Instances of these [resources](concepts/resources.md) are provisioned and
 assembled together into whole solutions.
 
-[Network](https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-overview/)
+Here are some great jumping-off points for documentation on each of these
+core services.
+
+* [Network](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=network)
+* [Storage](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=storage)
+* [Compute](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=compute)
+

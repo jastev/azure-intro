@@ -93,3 +93,13 @@ data:
 data:     
 info:    network dns record-set add-record command OK
 ```
+
+Of course, your TLD (in this case, on-azure.info) will have to be updated to delegate to the new subdomain, as well.
+
+Other DNS Notes
+===============
+When you create (or later, set) a public-ip, you can use the -d switch to
+specify the domain-label.  The IP will then be reachable through the FQDN
+domain-label.location.cloudapp.azure.com.
+
+Within their vnet, VMs are resolvable by their resource name.
