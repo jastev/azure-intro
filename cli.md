@@ -1,3 +1,0 @@
-Cross-Platform (xPlat) CLI
-==========================
-

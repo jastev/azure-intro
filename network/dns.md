@@ -9,7 +9,7 @@ unlike most other resources, you do not need to specify a location for the zone.
 $ azure network dns zone create -g intro-rg -n intro.on-azure.info
 info:    Executing command network dns zone create
 + Creating dns zone "intro.on-azure.info"                                      
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/dnszones/intro.on-azure.info
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/dnszones/intro.on-azure.info
 data:    Name                            : intro.on-azure.info
 data:    Type                            : Microsoft.Network/dnszones
 data:    Location                        : global
@@ -61,11 +61,11 @@ To add DNS records to our zone, we must first [create a new record set](https://
 ```bash
 # azure network dns record-set create -g <resource-group> -z <zone> -n <dns-name> -y <record-type>
 
-$ azure network dns record-set create -g intro-rg -z intro.on-azure.info -n "*" -y A
+$ azure network dns record-set create -g intro-rg -z intro.on-azure.info -n www -y A
 info:    Executing command network dns record-set create
 warn:    using default TTL of 3600 seconds
-+ Creating DNS record set "*" of type "A"                                      
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/dnszones/intro.on-azure.info/A/*
++ Creating DNS record set "www" of type "A"                                      
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/dnszones/intro.on-azure.info/A/www
 data:    Name                            : *
 data:    Type                            : Microsoft.Network/dnszones/A
 data:    TTL                             : 3600
@@ -77,18 +77,18 @@ We can then add a record to this set.  In this case, we'll use the PIP of
 the load balancer that we created earlier.
 
 ```bash
-$ azure network dns record-set add-record -g intro-rg -z intro.on-azure.info -n "*" -y A -a 13.88.180.126
+$ azure network dns record-set add-record -g intro-rg -z intro.on-azure.info -n www -y A -a 104.45.233.180
 info:    Executing command network dns record-set add-record
 + Looking up the dns zone "intro.on-azure.info"                                
-+ Looking up the DNS Record Set "*" of type "A"                                
-+ Updating record set "*" of type "A"                                          
++ Looking up the DNS Record Set "www" of type "A"                              
++ Updating record set "www" of type "A"                                        
 data:    Id                              : /subscriptions/1111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/dnszones/intro.on-azure.info/A/*
-data:    Name                            : *
+data:    Name                            : www
 data:    Type                            : Microsoft.Network/dnszones/A
 data:    TTL                             : 3600
 data:    Metadata                        : 
 data:    A records:
-data:        IPv4 address                : 13.88.180.126
+data:        IPv4 address                : 104.45.233.180
 data:     
 data:     
 info:    network dns record-set add-record command OK

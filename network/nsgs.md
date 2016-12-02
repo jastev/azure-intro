@@ -20,7 +20,7 @@ $ azure network nsg create -g intro-rg -n intro-nsg -l westus
 info:    Executing command network nsg create
 + Looking up the network security group "intro-nsg"                            
 + Creating a network security group "intro-nsg"                                
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg
 data:    Name                            : intro-nsg
 data:    Type                            : Microsoft.Network/networkSecurityGroups
 data:    Location                        : westus
@@ -54,7 +54,7 @@ warn:    Using default --destination-address-prefix *
 + Looking up the network security group "intro-nsg"                            
 + Looking up the network security rule "allow-ssh-in"                          
 + Creating a network security rule "allow-ssh-in"                              
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg/securityRules/allow-ssh-in
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg/securityRules/allow-ssh-in
 data:    Name                            : allow-ssh-in
 data:    Type                            : Microsoft.Network/networkSecurityGroups/securityRules
 data:    Provisioning state              : Succeeded
@@ -75,7 +75,7 @@ Showing the NSG or listing the rules will verify that the rule has been added:
 $ azure network nsg show -g intro-rg -n intro-nsg
 info:    Executing command network nsg show
 + Looking up the network security group "intro-nsg"                            
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg
 data:    Name                            : intro-nsg
 data:    Type                            : Microsoft.Network/networkSecurityGroups
 data:    Location                        : westus
@@ -91,7 +91,9 @@ data:    AllowVnetOutBound              VirtualNetwork     *            VirtualN
 data:    AllowInternetOutBound          *                  *            Internet        *                 *         Outbound   Allow   65001   
 data:    DenyAllOutBound                *                  *            *               *                 *         Outbound   Deny    65500   
 info:    network nsg show command OK
+```
 
+```bash
 $ azure network nsg rule list -g intro-rg -a intro-nsg
 info:    Executing command network nsg rule list
 + Looking up the network security group "intro-nsg"                            
@@ -123,7 +125,7 @@ data:    Location                        : westus
 data:    Provisioning state              : Succeeded
 data:    Internal domain name suffix     : heksuhpgkrnefhty1fwul5dpla.dx.internal.cloudapp.net
 data:    Enable IP forwarding            : false
-data:    Network security group          : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg
+data:    Network security group          : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkSecurityGroups/intro-nsg
 data:    IP configurations:
 data:      Name                          : default-ip-config
 data:      Primary                       : true
@@ -131,8 +133,8 @@ data:      Provisioning state            : Succeeded
 data:      Private IP address            : 10.0.0.4
 data:      Private IP version            : IPv4
 data:      Private IP allocation method  : Dynamic
-data:      Public IP address             : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/publicIPAddresses/intro-pip
-data:      Subnet                        : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
+data:      Public IP address             : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/publicIPAddresses/intro-pip
+data:      Subnet                        : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
 data:     
 info:    network nic set command OK
 ```

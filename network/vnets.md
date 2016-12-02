@@ -23,7 +23,7 @@ $ azure network vnet create -g intro-rg -n intro-vnet -l westus -a 10.0.0.0/8,19
 info:    Executing command network vnet create
 + Looking up the virtual network "intro-vnet"                                  
 + Creating virtual network "intro-vnet"                                        
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet
 data:    Name                            : intro-vnet
 data:    Type                            : Microsoft.Network/virtualNetworks
 data:    Location                        : westus
@@ -52,7 +52,7 @@ info:    network vnet list command OK
 $ azure network vnet show -g intro-rg -n intro-vnet
 info:    Executing command network vnet show
 + Looking up the virtual network "intro-vnet"                                  
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet
 data:    Name                            : intro-vnet
 data:    Type                            : Microsoft.Network/virtualNetworks
 data:    Location                        : westus
@@ -79,18 +79,20 @@ info:    Executing command network vnet subnet create
 + Looking up the virtual network "intro-vnet"                                  
 + Looking up the subnet "intro-subnet-10-0"                                    
 + Creating subnet "intro-subnet-10-0"                                          
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
 data:    Name                            : intro-subnet-10-0
 data:    Provisioning state              : Succeeded
 data:    Address prefix                  : 10.0.0.0/16
 info:    network vnet subnet create command OK
+```
 
-azure network vnet subnet create -g intro-rg -e intro-vnet -n intro-subnet-10-1 -a 10.1.0.0/16
+```bash
+$ azure network vnet subnet create -g intro-rg -e intro-vnet -n intro-subnet-10-1 -a 10.1.0.0/16
 info:    Executing command network vnet subnet create
 + Looking up the virtual network "intro-vnet"                                  
 + Looking up the subnet "intro-subnet-10-1"                                    
 + Creating subnet "intro-subnet-10-1"                                          
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-1
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-1
 data:    Name                            : intro-subnet-10-1
 data:    Provisioning state              : Succeeded
 data:    Address prefix                  : 10.1.0.0/16
@@ -120,7 +122,7 @@ $ azure network vnet subnet show -g intro-rg -e intro-vnet -n intro-subnet-10-0
 info:    Executing command network vnet subnet show
 + Looking up the virtual network "intro-vnet"                                  
 + Looking up the subnet "intro-subnet-10-0"                                    
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
 data:    Name                            : intro-subnet-10-0
 data:    Provisioning state              : Succeeded
 data:    Address prefix                  : 10.0.0.0/16

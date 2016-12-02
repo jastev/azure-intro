@@ -18,7 +18,7 @@ info:    Executing command network nic create
 + Looking up the subnet "intro-subnet-10-0"                                    
 + Looking up the public ip "intro-pip"                                         
 + Creating network interface "intro-nic"                                       
-data:    Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/networkInterfaces/intro-nic
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkInterfaces/intro-nic
 data:    Name                            : intro-nic
 data:    Type                            : Microsoft.Network/networkInterfaces
 data:    Location                        : westus
@@ -32,8 +32,8 @@ data:      Provisioning state            : Succeeded
 data:      Private IP address            : 10.0.0.4
 data:      Private IP version            : IPv4
 data:      Private IP allocation method  : Dynamic
-data:      Public IP address             : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/publicIPAddresses/intro-pip
-data:      Subnet                        : /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
+data:      Public IP address             : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/publicIPAddresses/intro-pip
+data:      Subnet                        : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/virtualNetworks/intro-vnet/subnets/intro-subnet-10-0
 data:     
 info:    network nic create command OK
 ```

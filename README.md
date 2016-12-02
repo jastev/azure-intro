@@ -86,3 +86,4 @@ all work.
 * [Virtual Machines](compute/vms.md)
 
 ## Wrap-up
+* [Install Apache httpd and test](wrapup.md)
