@@ -31,12 +31,14 @@ in the US than in Europe/Asia.
 backed by SSDs and have a higher IOPS limit.  However, currently, premium
 accounts are not truly "general purpose" - they *only support Azure VHDs
 (page blobs) for VMs*.  And additionally, not every size of Azure VM can
-use a premium image - only DS, DSv2, GS, or Fs.  Premium accounts also only
+use a premium image - only DS, DSv2, GS, or FS.  Premium accounts also only
 support LRS, and do not support [public accessibility](accessibility.md).
 
-Unlike standard accounts, which vary in size by the data they contain, 
-premium accounts come in only three preallocated sizes: P10 (128GiB), 
-P20 (512GiB), and P30 (1024GiB).  Each also comes with fully committed
+Unlike standard accounts, which have the same stats regardless of the data they contain, 
+premium accounts come in three sizes: P10 (128GiB), 
+P20 (512GiB), and P30 (1024GiB).  Your actually used size is rounded up to
+the nearest Premium level (there's no need to explicitly provision a certain
+level, or move from one to another).  Each comes with fully committed
 performance specs, graduated with those levels.
 
 ## Blob Accounts

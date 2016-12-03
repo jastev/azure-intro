@@ -48,3 +48,9 @@ set, and not having that VM in one at all.  If the VM is not in an availability
 set, then Azure will attempt to notify (e.g. via email) the owner before
 maintenance.  If it is in an availability set, then Azure assumes that such
 notification is not necessary.
+
+Also: fault domains represent single points of failure in the racks where
+the VM host hardware operates, including networking hardware.  VMs require
+access to their VHDs as well, though, and these are not mapped to fault
+domains.  Make sure VHDs for the VMs in an availablity set are on different
+storage accounts for the highest availability.

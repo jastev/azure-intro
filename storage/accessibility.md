@@ -35,7 +35,7 @@ info:    storage account keys renew command OK
 Instead of specifiying the storage account details on the command line, they
 can also be put into environment variables.  This is convenient if you'll be
 using the same storage account repeatedly.  You can either use the pair
-AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY or you can use
+AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY, or you can use
 AZURE_STORAGE_CONNECTION_STRING.
 
 Instead of keys, access can also be managed using [shared access signatures]
