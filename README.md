@@ -85,6 +85,7 @@ all work.
 * [Availability Sets](compute/availsets.md)
 * [Virtual Machines](compute/vms.md)
 * [Linux Integration Services & the Azure Linux Agent](compute/lis-waagent.md)
+* [Extensions](compute/extensions.md)
 
 ## Wrap-up
 * [Install Apache httpd, and Test](wrapup.md)
