@@ -58,7 +58,7 @@ it supports, and the regions where each is available.
 ```bash
 # azure provider show <provider-namespace>
 
-azure provider show Microsoft.Compute
+$ azure provider show Microsoft.Compute
 data:    
 ...
 data:    ProviderNamespace :  Microsoft.Compute

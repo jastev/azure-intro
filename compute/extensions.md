@@ -23,7 +23,8 @@ is installed by default.  You can use this to reset access to a VM from which
 you've been inadvertently locked out, for example by updating an SSH key.
 
 ```bash
-# azure vm extension set -g <resource-group> -m <vm> -n VMAccessForLinux -p Microsoft.OSTCExtensions -o * --public-config '{"username":<user>, "ssh_key":<key>}'```
+# azure vm extension set -g <resource-group> -m <vm> -n VMAccessForLinux -p Microsoft.OSTCExtensions -o * --public-config '{"username":<user>, "ssh_key":<key>}'
+```
 
 These functions are so useful, in fact, that they've been baked right into
 the CLI.  The above is exactly equivalent to:

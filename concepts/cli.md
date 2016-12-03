@@ -23,7 +23,7 @@ for the password.
 
 ## Setting ARM Mode
 
-Interaction with Azure was originally through the concept of services.  This
+Azure was originally designed around the concept of services.  This
 is now deprecated, and new usage should be through Azure Resource Manager (ARM).
 However, legacy deployments require using service mode, so the CLI supports
 both.
@@ -48,12 +48,14 @@ $ azure <noun-phrase> <verb> <arguments-list>
 The noun-phrase is one or more ordered words that uniquely describe the 
 particular Azure feature to be used.
 
-The verb is drawn from the following:
+Most features support the following standard verbs:
 * list
 * create
 * show
 * set
 * delete
+
+Some features, though, introduce their own verbs that are feature-specific.
 
 The arguments list can usually be supplied in two different styles.  In
 the positionally-dependent style, the optional arguments appear first in
