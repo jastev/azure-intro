@@ -18,7 +18,21 @@ Extensions are removed with the -u or --uninstall option:
 # azure vm extension set -g <resource-group> -m <vm> -n <extension> -p <publisher> -o version -u
 ```
 
-One very useful extension is [CustomScript](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-extensions-customscript).
+The [VMAccess extension](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-using-vmaccess-extension)
+is installed by default.  You can use this to reset access to a VM from which
+you've been inadvertently locked out, for example by updating an SSH key.
+
+```bash
+# azure vm extension set -g <resource-group> -m <vm> -n VMAccessForLinux -p Microsoft.OSTCExtensions -o * --public-config '{"username":<user>, "ssh_key":<key>}'```
+
+These functions are so useful, in fact, that they've been baked right into
+the CLI.  The above is exactly equivalent to:
+
+```bash
+azure vm reset-access -g <resource-group> -n <vm> -u <user> -M <keyfile>
+```
+
+Another very useful extension is [CustomScript](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-extensions-customscript).
 Within the configuration, you specify a file to run, and optionally a URN
 from which to retrieve it at boot.
 
