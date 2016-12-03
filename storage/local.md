@@ -9,5 +9,5 @@ and free.
 Unlike the Azure Storage service, the local disk has no guarantee of 
 persistence across VM reboots (where it might move to a different host).
 It is well-suited to high-throughput, low-latency needs that are transient.
-One common use is for swap (in fact, the [Azure Linux Agent](../compute/lis-agent.md) does this by default); another is for intermediate state on restartable
+One common use is for swap (in fact, the [Azure Linux Agent](../compute/lis-waagent.md) does this by default); another is for intermediate state on restartable
 tasks (e.g. locally caching source code and compiling it).

@@ -25,7 +25,7 @@ The [Azure Linux Agent](https://docs.microsoft.com/en-us/azure/virtual-machines/
 is another important part of the integration of Linux VMs into Azure.  It
 has several important roles at provisioning-time, boot-time, and run-time,
 including setting up the initial user account and ssh access, mounting
-local storage, configuring swap, redirecting the serial port for diagnostics,
+[local storage](../storage/local.md), configuring swap, redirecting the serial port for diagnostics,
 and setting up [VM extensions](extensions.md).
 
 It is configured in /etc/waagent.conf.  Note that Ubuntu images use

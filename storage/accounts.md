@@ -30,8 +30,8 @@ in the US than in Europe/Asia.
 [Premium](https://azure.microsoft.com/en-us/documentation/articles/storage-premium-storage/) accounts, on the other hand, are
 backed by SSDs and have a higher IOPS limit.  However, currently, premium
 accounts are not truly "general purpose" - they *only support Azure VHDs
-(page blobs) for VMs*.  And additionally, not every size of Azure VM can
-use a premium image - only DS, DSv2, GS, or FS.  Premium accounts also only
+(page blobs) for VMs*.  And additionally, not every [size of Azure VM](../compute/vms.md) can
+use a premium image - only DS, DSv2, GS, or Fs.  Premium accounts also only
 support LRS, and do not support [public accessibility](accessibility.md).
 
 Unlike standard accounts, which have the same stats regardless of the data they contain, 

@@ -51,6 +51,6 @@ notification is not necessary.
 
 Also: fault domains represent single points of failure in the racks where
 the VM host hardware operates, including networking hardware.  VMs require
-access to their VHDs as well, though, and these are not mapped to fault
+access to their [VHDs](../storage/vhds.md) as well, though, and these are not mapped to fault
 domains.  Make sure VHDs for the VMs in an availablity set are on different
-storage accounts for the highest availability.
+[storage accounts](../storage/accounts.md) for the highest availability.

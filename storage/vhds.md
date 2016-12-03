@@ -70,7 +70,8 @@ lag or fail.  Keep in mind that when debugging what looks like a network
 issue, you may actually be looking at a storage issue.
 
 One way to mitigate an IOPS limit is to use a technique such as logical
-volume management, to map a logical disk across several VHDs.
+volume management, to map a logical disk across several VHDs.  This is
+recommended only for data disks, though, not boot disks.
 
 VHDs in Premium storage are a different story.  The IOPS limit of a VHD in
 a Premium account depends on the size of the disk.  Also, the IOPS draw of
