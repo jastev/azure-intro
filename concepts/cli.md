@@ -4,22 +4,16 @@ Cross-Platform (xPlat) CLI
 ## Logging In
 
 Before you can begin interacting with Azure through the CLI, you will have to
-[login](https://docs.microsoft.com/en-us/azure/xplat-cli-connect):
+[login](auth.md).
 
 ```bash
 $ azure login
 info:    Executing command login
-info:    To sign in, use a web browser to open the page https://aka.ms/devicelogin and enter the code B8U7S2E5N to authenticate.
+info:    To sign in, use a web browser to open the page https://aka.ms/devicelogin and enter the code XXXXXXXX to authenticate.
 ```
 
-On the web page you will enter the code you're given by the CLI, and then
-be prompted to authenticate.  After successfully authenticating, the CLI
-will obtain a time-limited token that will allow it access to Azure with
-your credentials.
-
-If multifactor authentication is not in play, you can also use the -u
-switch to login with a particular username, and the CLI will prompt you
-for the password.
+For now, we just need to be logged in.  More details will be presented a 
+little later, when we talk about [authentication](auth.md).
 
 ## Setting ARM Mode
 
@@ -36,6 +30,8 @@ info:    Executing command config mode
 info:    New mode is arm
 info:    config mode command OK
 ``` 
+
+CLI configuration is preserved in ~/.azure/config.json.
 
 ## Syntax
 

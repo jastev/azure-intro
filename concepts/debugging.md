@@ -13,8 +13,8 @@ with accordingly different behavior.
 
 ## Quotas
 By default, an azure subscription has limits on the provisioning of certain
-kinds of resources.  These [quotas](https://azure.microsoft.com/en-us/documentation/articles/azure-subscription-service-limits/) can be raised by contacting
-Microsoft Support.
+kinds of resources.  These [quotas](https://azure.microsoft.com/en-us/documentation/articles/azure-subscription-service-limits/) can be raised by 
+[contacting Microsoft Support](https://ms.portal.azure.com/#create/Microsoft.Support).
 
 ## CLI
 There are several general switches to the Azure CLI which can be helpful:

@@ -17,8 +17,8 @@ Azure resources] (https://azure.microsoft.com/en-us/regions/services/)
 varies across regions.
 
 The Azure xplat CLI uses the label "location" instead of "region".
-You can find all of the regions/locations for the currently active
-subscription with:
+You can find all of the regions/locations available for the environment
+of the currently active subscription with:
 
 ```bash
 $ azure location list
@@ -36,3 +36,6 @@ a geographic modifier, and a disambiguating numeric suffix (if required).
 However, the older the region, the more likely it is that the geographic
 modifier will precede the country name, rather than the reverse.  Hence,
 we have regions like westus and westus2, but japaneast and japanwest.
+
+It makes sense that there would be an 'azure location show' command, but
+there isn't.

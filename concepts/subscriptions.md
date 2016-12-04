@@ -1,6 +1,6 @@
 Subscriptions
 =============
-A subscription is the root node of a resource tree.  It is also the single
+A subscription is the root node of a [resource](resources.md) tree.  It is also the single
 point of billing information for usage associated with all resources in the
 tree.  Each subscription is associated with only one [AAD tenant]
 (auth.md) (which represents the owning organization), but an organization

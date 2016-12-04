@@ -1,7 +1,7 @@
 Tenants, Authentication, and Authorization
 ==========================================
 In order to interact with Azure, through whatever interface, you must first
-authenticate.  With the xplat CLI, that looks like this:
+authenticate.  With the xplat CLI, [logging in](https://docs.microsoft.com/en-us/azure/xplat-cli-connect) looks like this:
 
 ```bash
 # AzureCloud is the default, but you can login to another environment with -e
@@ -58,8 +58,8 @@ from a tenant in AzureCloud.
 
 There are other ways to authenticate.  For example, using the --tenant, 
 -u, and -p switches, you can specify a different AAD tenant, username, and
-password.  Alternately, you can use the --certificate-file to login using
-your private key.
+password.  Service principals can use the --certificate-file to login using
+a private key.
 
 ## Authorization
 
@@ -77,3 +77,28 @@ registered in AAD, and then a [service principal]
 (https://azure.microsoft.com/en-us/documentation/articles/resource-group-authenticate-service-principal-cli/)
 can be set up to act on that application's behalf.  Service principals are
 authenticated and are granted authorizations within AAD exactly as are users.
+In fact, it is possible to login with the CLI as a service principal, rather
+than as a user.  You can use this to verify that a service principal has been
+set up correctly.
+
+Note that the permission to register applications and create service
+principals is granted on a per-user basis within your Azure AD tenant.
+
+## CLI
+
+After successfully authenticating, the CLI will obtain a time-limited token
+that will allow it access to Azure with your credentials.  These tokens are 
+cached in ~/.azure/accessTokens.json.  Note that anyone who can access this
+file can interact with Azure with your credentials as well, until the token
+expires.
+
+The OS protects it with file permissions, but you may want to take further
+precautions as well, such as encrypting your disk or home directory.  A
+best practice is to get in the habit of logging out of the CLI when you're
+finished with a session, as this deletes the tokens.
+
+```bash
+# azure logout
+```
+
+You can also simply delete the file.

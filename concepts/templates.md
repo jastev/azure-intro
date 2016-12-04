@@ -9,8 +9,8 @@ To retrieve a template that models the current state of an existing resource
 group, we use the azure CLI as follows:
 
 ```bash
-# azure group export <group-name>
-# azure group export -n <group-name>
+# azure group export <resource-group>
+# azure group export -n <resource-group>
 
 $ azure group export -n intro-rg
 info:    Executing command group export
@@ -28,6 +28,8 @@ The resource group that the template is being deployed into must already
 exist.
 
 ```bash
+# azure group deployment create -g <resource-group> -f <template-file>
+
 $ azure group deployment create -g intro-rg-2 -f intro-rg.json
 info:    Executing command group deployment create
 info:    Supply values for the following parameters
@@ -52,11 +54,16 @@ deployment will ensure that the resulting state of the resource group matches
 the template completely, including deleting any previously existing resources
 in the group that are not specified in the template.
 
+The deployment will be given a default name unless it is specified with
+the -n switch.
+
 It is also possible to retrieve the template that was originally used to
 populate a resource group, even though the current state of the resources
 in the group may no longer match the original template.
 
 ```bash
+# azure group deployment template download -g <resource-group> -n <deployment>
+
 $ azure group deployment template download -g intro-rg-2 -n intro-rg
 info:    Executing command group deployment template download
 + Getting resource group deployment template intro-rg               

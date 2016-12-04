@@ -17,7 +17,7 @@ Every resource in Azure is provisioned as part of a [subscription]
 The entire lifecycle of a resource, and all interactions with it,
 is governed by its resource provider (RP) and resource type.  A single 
 RP can expose multiple resource types, but a given resource can only be
-of a single type.  The provider and type exclusively determine the
+of a single type.  The provider, version, and type exclusively determine the
 legal means and meaning for interactions with the resource.
 
 RPs are implemented as [REST APIs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-rest-api).  When a request to provision a new
@@ -29,16 +29,17 @@ in the response is also returned as JSON.
 
 The REST APIs for all RPs are versioned - the desired version is explicitly
 specified in the call.  RP versions have their own lifecycle, arriving in
-a preview state, being promoted to GA, then chosen as the default
+a preview state, rolled out over time to various regions, being promoted 
+to GA, then chosen as the default
 version by various interfaces, before being overtaken by newer versions,
 deprecated, and finally obsoleted.  It is the normal case that [multiple
 versions](debugging.md) of a given RP are concurrently available.
 
 Each RP is registered in Azure with a namespace, which also uniquely
 identifies it.  Because RPs can also be provided by third parties, these
-namespaces begin with the vendor of origin.  Thus, the first party RPs
-provided by Microsoft have namespaces such as Microsoft.Network,
-Microsoft.Storage, and Microsoft.Compute
+namespaces are hierarchical and begin with the vendor of origin.  Thus, 
+the first party RPs provided by Microsoft have namespaces such as 
+Microsoft.Network, Microsoft.Storage, and Microsoft.Compute.
 
 ```bash
 $ azure provider list
@@ -57,8 +58,9 @@ it supports, and the regions where each is available.
 
 ```bash
 # azure provider show <provider-namespace>
+# azure provider show -n <provider-namespace>
 
-$ azure provider show Microsoft.Compute
+$ azure provider show -n Microsoft.Compute
 data:    
 ...
 data:    ProviderNamespace :  Microsoft.Compute
@@ -76,6 +78,9 @@ data:
 info:    provider show command OK
 ```
 
+It would be helpful to be able to list all of the resource providers
+available within a given location, but the CLI doesnt support that currently.
+
 ## Resource Groups
 
 Resources are often so fine-grained that their value comes from 
@@ -89,8 +94,8 @@ A resource group is itself a resource, and like all resources, it has to
 be created in a given location:
 
 ```bash
-# azure group create <group-name> <location>
-# azure group create -n <group-name> -l <location>
+# azure group create <resource-group> <location>
+# azure group create -n <resource-group> -l <location>
 
 $ azure group create -n intro-rg -l westus
 info:    Created resource group intro-rg
@@ -121,9 +126,10 @@ info:    group list command OK
 and all of the resources within a group in the current subscription with
 
 ```bash
-# azure group show <group>
+# azure group show <resource-group>
+# azure group show -n <resource-group>
 
-$ azure group show intro-rg
+$ azure group show -n intro-rg
 info:    Executing command group show
 + Listing resource groups                                                      
 + Listing resources for the group                                              
