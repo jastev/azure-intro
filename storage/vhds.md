@@ -50,7 +50,7 @@ can be mounted is a function of VM size.
 
 ## VHDs, Storage Accounts, IOPS, and Ingress/Egress Bandwidth
 
-Generally, VHDs in Standard storage accounts have an IOPS limit of 500.
+Generally, VHDs in Standard storage accounts have an [IOPS limit](https://docs.microsoft.com/en-us/azure/storage/storage-scalability-targets) of 500.
 These accounts have a total limit of 20k IOPS, and dividing the latter by
 the former gives the standard guidance of no more than 40 VHDs per account.
 It's also true, however, that the 500 IOPS is not guaranteed - performance
@@ -59,10 +59,6 @@ are not taxed at close to 500 IOPS most of the time.  So... the actual
 number of VHDs that you can successfully put in a standard account has as
 much to do with your usage patterns as it does with technology.  If you're
 booting a lot of VMs simultaneously, you'll want fewer VHDs in those accounts.
-
-IOPS are not the only governor, though.  Storage accounts are also limited
-by total I/O bandwidth.  It's good practice to keep your VHDs in separate
-accounts from your heavily accessed non-page blobs.
 
 When VMs are I/O bound against a VHD, they may block and become unresponsive.
 If that VM is providing network services, these connections may correspondingly
@@ -73,11 +69,14 @@ One way to mitigate an IOPS limit is to use a technique such as logical
 volume management, to map a logical disk across several VHDs.  This is
 recommended only for data disks, though, not boot disks.
 
-VHDs in Premium storage are a different story.  The IOPS limit of a VHD in
-a Premium account depends on the size of the disk.  Also, the IOPS draw of
-a VM against an SSD-backed VHD depends on the type/size of the VM.  As a
+VHDs in Premium storage are a different story.  They have IOPS and storage
+bandwidth (ingress+egress) [limits](https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage) that change by the size of the disk.  As a
 result, it's not possible to give useful general guidance on the number of
 VHDs that can be put into a Premium account.
+Because there is also a total IOPS and storage bandwidth limit based on the 
+[type/size of the VM](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-sizes),
+it is very possible with Premium storage for the VM to be the I/O bottleneck,
+rather than the storage account.  
 
 ## Fault-Tolerance and VHDs
 

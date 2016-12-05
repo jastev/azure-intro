@@ -113,3 +113,15 @@ data:      Subnet                        : /subscriptions/25b347b0-e6dd-45c1-bb1
 data:     
 info:    network nic create command OK
 ```
+
+```bash
+$ azure network nic list -g intro-rg
+info:    Executing command network nic list
++ Getting the network interfaces                                               
+data:    Name           Location  Resource group  Provisioning state  MAC Address        IP forwarding  Internal DNS name  Internal FQDN  Internal domain name suffix                        
+data:    -------------  --------  --------------  ------------------  -----------------  -------------  -----------------  -------------  ---------------------------------------------------
+data:    intro-nic      westus    intro-rg        Succeeded           00-0D-3A-32-37-1C  false                                            oo1wlrzw0jmelof2yc4p53kbnf.dx.internal.cloudapp.net
+data:    intro-nic-be1  westus    intro-rg        Succeeded           00-0D-3A-34-FE-26  false                                            oo1wlrzw0jmelof2yc4p53kbnf.dx.internal.cloudapp.net
+data:    intro-nic-be2  westus    intro-rg        Succeeded           00-0D-3A-33-70-5B  false                                            oo1wlrzw0jmelof2yc4p53kbnf.dx.internal.cloudapp.net
+info:    network nic list command OK
+```

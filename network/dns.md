@@ -66,7 +66,7 @@ info:    Executing command network dns record-set create
 warn:    using default TTL of 3600 seconds
 + Creating DNS record set "www" of type "A"                                      
 data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/dnszones/intro.on-azure.info/A/www
-data:    Name                            : *
+data:    Name                            : www
 data:    Type                            : Microsoft.Network/dnszones/A
 data:    TTL                             : 3600
 data:    Metadata                        : 

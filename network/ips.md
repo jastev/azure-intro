@@ -20,10 +20,12 @@ were to fall within an address space assigned to a vnet.  Public IPs are
 allocated from a pool maintained within Azure - you cannot specify a 
 particular address.
 
-When a DIP initiates a connection to an extnernal address, it
+When a DIP initiates a connection to an external address, it
 undergoes source network address translation (SNAT) within Azure.  If it
 is not behind a [load balancer](lbs.md), it is mapped
-to a temporary public IP address - a virtual IP address, or _VIP_. 
+to a temporary public IP address - a virtual IP address, or _VIP_, 
+borrowed from its host.  A DIP that is behind an Internet-facing load 
+balancer is SNATted to the PIP of the load balancer.
 
 Another option is to request a more lasting assignment of a public IP address
 from the Azure pool.  These instance-level public IPs (_ILPIP_ or just _PIP_),
@@ -32,7 +34,7 @@ allocate and manage.
 
 ## Dynamic vs. Static IPs
 
-By default, both private and public IP addresses (DIPs and VIPs) are allocated dynamically
+By default, both private and public IP addresses are allocated dynamically
 and can change periodically (they are allocated when a resource is started,
 and released when a resource is stopped or deleted).  To specify that an
 address is static, use the -a switch.  For private IP addresses, the
@@ -84,12 +86,33 @@ info:    network public-ip create command OK
 ```
 
 ```bash
-azure network public-ip list -g <resource-group-name>
+# azure network public-ip list -g <resource-group-name>
+
+$ azure network public-ip list -g intro-rg
+info:    Executing command network public-ip list
++ Getting the public ip addresses                                              
+data:    Name          Location  Resource group  Provisioning state  Allocation method  IP version  IP Address      Idle timeout, minutes  FQDN
+data:    ------------  --------  --------------  ------------------  -----------------  ----------  --------------  ---------------------  ----
+data:    intro-pip     westus    intro-rg        Succeeded           Static             IPv4        13.91.100.127   4                          
+data:    intro-pip-lb  westus    intro-rg        Succeeded           Static             IPv4        104.45.233.180  4                          
+info:    network public-ip list command OK
 ```
 
 ```bash
-azure network public-ip show -g <resource-group-name> -n <public-ip-name>
-```
+# azure network public-ip show -g <resource-group-name> -n <public-ip-name>
 
-A DIP that is behind an Internet-facing load balancer is SNATted to the PIP
-of the load balancer.
+$ azure network public-ip show -g intro-rg -n intro-pip
+info:    Executing command network public-ip show
++ Looking up the public ip "intro-pip"                                         
+data:    Id                              : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/publicIPAddresses/intro-pip
+data:    Name                            : intro-pip
+data:    Type                            : Microsoft.Network/publicIPAddresses
+data:    Location                        : westus
+data:    Provisioning state              : Succeeded
+data:    Allocation method               : Static
+data:    IP version                      : IPv4
+data:    Idle timeout in minutes         : 4
+data:    IP Address                      : 13.91.100.127
+data:    IP configuration id             : /subscriptions/25b347b0-e6dd-45c1-bb11-529e36438d8f/resourceGroups/intro-rg/providers/Microsoft.Network/networkInterfaces/intro-nic/ipConfigurations/default-ip-config
+info:    network public-ip show command OK
+```

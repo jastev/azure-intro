@@ -67,7 +67,7 @@ _N-series_
 
 The N-series is GPU-enabled, with two lines based on the NVIDA M60 and K80.
 
-*Note* Because hardware varies from region to region, not all series/sizes
+**Note** Because hardware varies from region to region, not all series/sizes
 are available everywhere.  To see the list of VM sizes that are nominally
 available in a given region, use
 

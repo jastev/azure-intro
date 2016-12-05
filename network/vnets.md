@@ -129,3 +129,5 @@ data:    Address prefix                  : 10.0.0.0/16
 info:    network vnet subnet show command OK
 ```
 
+There is a special subnet that does not exist by default, called 
+"GatewaySubnet", that holds a vnet's [VPN Gateways](gateways.md).
